@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+begin
+  puts File.expand_path("../../lib/install", __FILE__)
+  require File.expand_path("../../lib/install", __FILE__)
+rescue LoadError
+  require 'rubygems'
+  require 'install'
+end
+
+RIVim::Install.install_vim_local_plugin
